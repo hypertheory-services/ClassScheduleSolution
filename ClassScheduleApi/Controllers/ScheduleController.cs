@@ -18,4 +18,18 @@ public class ScheduleController : ControllerBase
         return Ok(response);
         
     }
+
+    // GET /schedule/393893893
+    [HttpGet("{courseId}")]
+    public async Task<ActionResult> GetAClassSchedule(string courseId)
+    {
+        var response = _fileScheduleAdapter.GetScheduleForClass(courseId);
+
+        return response switch
+        {
+            null => NotFound(),
+            _ => Ok(new { data = response })
+        };
+
+    }
 }
