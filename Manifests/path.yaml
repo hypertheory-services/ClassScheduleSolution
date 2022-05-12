@@ -11,6 +11,7 @@ spec:
       match: Host(`api.rancher.localhost`) && PathPrefix(`/classes/v1`)
       middlewares:
         - name: stripprefix-regex
+        - name: cors-promiscuous
       services:
         - kind: Service
           name: schedule-api-service

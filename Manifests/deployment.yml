@@ -4,7 +4,7 @@ metadata:
   name: schedule-api
   namespace: courses
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: schedule-api
